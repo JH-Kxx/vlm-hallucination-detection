@@ -145,8 +145,7 @@ pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
 </p>
 
 <p align="center"><em>
-Figure 1. phrase( man / three children / surf board / water )를 GroundingDINO 텍스트 프롬프트로 입력해  
-객체 bbox와 p_dino confidence를 얻은 예시.
+phrase( man / three children / surf board / water )를 GroundingDINO 텍스트 프롬프트로 입력해 객체 bbox와 p_dino confidence를 얻은 예시.
 </em></p>
 
 ---
