@@ -28,22 +28,50 @@ Figure 1. 전체 파이프라인 (BLIP2 캡션 생성 → spaCy 파싱 → Groun
 ### Install
 
 ```bash
-# PyTorch (CPU-only)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# ========================
+# BLIP2 (LAVIS)
+# ========================
+# BLIP2는 Salesforce/LAVIS repo를 그대로 clone해서 사용합니다.
+git clone https://github.com/salesforce/LAVIS.git
+cd LAVIS
+pip install -r requirements.txt
+pip install -e .
+cd ..
 
-# BLIP2 (transformers)
-pip install transformers==4.36.0
 
-# GroundingDINO & open_clip
-pip install git+https://github.com/IDEA-Research/GroundingDINO.git
-pip install git+https://github.com/mlfoundations/open_clip.git
+# ========================
+# GroundingDINO
+# ========================
+# GroundingDINO는 IDEA-Research GroundingDINO repo clone 후 설치
+git clone https://github.com/IDEA-Research/GroundingDINO.git
+cd GroundingDINO
+pip install -r requirements.txt
+pip install -e .
+cd ..
 
+
+# ========================
+# open_clip
+# ========================
+# open_clip은 LAION의 오리지널 레포를 clone 후 설치
+git clone https://github.com/mlfoundations/open_clip.git
+cd open_clip
+pip install -e .
+cd ..
+
+
+# ========================
 # spaCy
+# ========================
 pip install spacy
 python -m spacy download en_core_web_sm
 
+
+# ========================
 # Utils
+# ========================
 pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
+
 ```
 
 ---
@@ -74,7 +102,7 @@ pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
 
 전체 구현 코드는 다음 노트북에 포함되어 있습니다:
 
-- **환각탐지_전체코드정리.ipynb**
+- **[환각탐지_전체코드정리.ipynb](./환각탐지_전체코드정리.ipynb)**
 
 구현 흐름은 아래와 같습니다:
 
@@ -125,14 +153,13 @@ Figure 1. phrase( man / three children / surf board / water )를 GroundingDINO �
 
 ### ▶ Token-level Highlighting Examples
 
-#### 1) Result 1 — 정상 매칭
+#### 1) Result 1
 
 <p align="center">
   <img src="figures/result1.png" width="700">
 </p>
 
 <p align="center"><em>
-Figure 2. 객체가 모두 이미지와 정상적으로 일치해 match로 강조된 사례.
 </em></p>
 
 ---
@@ -140,5 +167,42 @@ Figure 2. 객체가 모두 이미지와 정상적으로 일치해 match로 강�
 #### 2) Result 2 — 환각(Hallucination) 사례
 
 <p align="center">
-  <img src="figures/result2.png"가
-- 다양한 데이터셋(COCO 외 open vocab 데이터) 테스트 
+  <img src="figures/result2.png" width="700">
+</p>
+
+<p align="center"><em>
+이미지에 존재하지 않는 Answers 단어가 포함되어 hallucination으로 판정된 예시.
+</em></p>
+
+---
+
+#### 3) Result 3
+
+<p align="center">
+  <img src="figures/result3.png" width="700">
+</p>
+
+<p align="center"><em>
+</em></p>
+
+---
+
+#### 4) Result 4
+
+<p align="center">
+  <img src="figures/result4.png" width="700">
+</p>
+
+<p align="center"><em>
+</em></p>
+
+---
+
+## 🚀 Future Work
+
+- 객체(Object), 색상(Color), 수량(Quantity) 수준에서  
+  **관계(Relation)** 단위 환각 탐지로 확장
+- GroundingDINO 외 **SAM, DINOv2** 등 멀티 백엔드 기반 교차 검증
+- 대규모 데이터셋을 활용한 정량 지표(F1, Accuracy, Consistency) 정립
+- 다양한 데이터셋(COCO 외 open vocab 데이터) 테스트
+
