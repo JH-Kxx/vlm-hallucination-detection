@@ -44,3 +44,17 @@ python -m spacy download en_core_web_sm
 
 # Utils
 pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
+
+---
+
+## 🔗 Models & Libraries Used
+
+| Component | Model / Library | GitHub |
+|----------|------------------|--------|
+| Caption Generation | BLIP2 (Salesforce/blip2-opt-2.7b) | https://github.com/salesforce/LAVIS |
+| Caption Selection / Similarity | CLIP (OpenAI) | https://github.com/openai/CLIP |
+| Phrase-level Alignment | open_clip (LAION) | https://github.com/mlfoundations/open_clip |
+| Object Grounding | GroundingDINO | https://github.com/IDEA-Research/GroundingDINO |
+| Caption Parsing | spaCy (en_core_web_sm) | https://github.com/explosion/spaCy |
+| Color Feature Extraction | scikit-learn (KMeans) | https://github.com/scikit-learn/scikit-learn |
+| Image Processing | OpenCV | https://github.com/opencv/opencv |
