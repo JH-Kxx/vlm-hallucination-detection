@@ -44,6 +44,7 @@ python -m spacy download en_core_web_sm
 
 # Utils
 pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
+```
 
 ---
 
@@ -58,3 +59,13 @@ pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
 | Caption Parsing | spaCy (en_core_web_sm) | https://github.com/explosion/spaCy |
 | Color Feature Extraction | scikit-learn (KMeans) | https://github.com/scikit-learn/scikit-learn |
 | Image Processing | OpenCV | https://github.com/opencv/opencv |
+
+---
+
+## 📂 Dataset (MS COCO)
+
+본 연구는 **MS COCO 2017 Validation Set** 기반으로 수행되었습니다.
+
+- COCO Download: https://cocodataset.org/#download
+
+---
