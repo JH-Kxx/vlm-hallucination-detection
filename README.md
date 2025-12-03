@@ -13,7 +13,7 @@
 </p>
 
 <p align="center"><em>
-Figure 1. 전체 파이프라인 (BLIP2 캡션 생성 → spaCy 파싱 → GroundingDINO 객체 검출 → 색상·수량 속성 검증 → 토큰 하이라이트)
+전체 파이프라인 (BLIP2 캡션 생성 → spaCy 파싱 → GroundingDINO 객체 검출 → 색상·수량 속성 검증 → 토큰 하이라이트)
 </em></p>
 
 ---
@@ -151,7 +151,7 @@ Figure 1. phrase( man / three children / surf board / water )를 GroundingDINO �
 
 ---
 
-### ▶ Token-level Highlighting Examples
+### ▶ Highlighting Examples
 
 #### 1) Result 1
 
