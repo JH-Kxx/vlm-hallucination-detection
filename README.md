@@ -84,9 +84,6 @@ pip install numpy pandas pillow opencv-python matplotlib tqdm scikit-learn
 | Caption Selection / Similarity | CLIP (OpenAI) | https://github.com/openai/CLIP |
 | Phrase-level Alignment | open_clip (LAION) | https://github.com/mlfoundations/open_clip |
 | Object Grounding | GroundingDINO | https://github.com/IDEA-Research/GroundingDINO |
-| Caption Parsing | spaCy (en_core_web_sm) | https://github.com/explosion/spaCy |
-| Color Feature Extraction | scikit-learn (KMeans) | https://github.com/scikit-learn/scikit-learn |
-| Image Processing | OpenCV | https://github.com/opencv/opencv |
 
 ---
 
